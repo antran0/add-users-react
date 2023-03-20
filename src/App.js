@@ -14,9 +14,16 @@ const INITIAL_USERS = [
 function App() {
   const [addedUsers, setUsers] = React.useState(INITIAL_USERS);
 
+  const handleAddNewUser = (name, age) => {
+    setUsers((prevUsers) => [
+      ...prevUsers,
+      { id: Math.random(), name: name, age: age },
+    ]);
+  };
+
   return (
     <div className="App">
-      <InputForm />
+      <InputForm onAddNewUser={handleAddNewUser} />
       <UserList users={addedUsers} />
     </div>
   );

@@ -8,6 +8,8 @@ const InputForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    props.onAddNewUser(enteredUsername, enteredAge);
+
     setEnteredUsername("");
     setEnteredAge("");
   };
