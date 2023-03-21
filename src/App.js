@@ -15,10 +15,12 @@ function App() {
   const [addedUsers, setUsers] = React.useState(INITIAL_USERS);
 
   const handleAddNewUser = (name, age) => {
-    setUsers((prevUsers) => [
-      ...prevUsers,
-      { id: Math.random(), name: name, age: age },
-    ]);
+    if (name !== "" && age > 0) {
+      setUsers((prevUsers) => [
+        ...prevUsers,
+        { id: Math.random(), name: name, age: age },
+      ]);
+    }
   };
 
   return (
