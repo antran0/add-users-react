@@ -4,7 +4,7 @@ const User = (props) => {
   return (
     <li>
       <div>{props.name}</div>
-      <div>{props.age}</div>
+      <div>{`(${props.age} years old)`}</div>
     </li>
   );
 };
