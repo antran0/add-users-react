@@ -3,6 +3,7 @@ import InputForm from "./components/InputForm";
 import React from "react";
 import "./App.css";
 import UserList from "./components/UsersList";
+import ErrorModal from "./components/ErrorModal";
 
 const INITIAL_USERS = [
   { id: Math.random(), name: "Theodore Bear", age: 5 },
