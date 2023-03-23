@@ -1,0 +1,10 @@
+.user {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.user > div {
+  margin: 5px;
+}

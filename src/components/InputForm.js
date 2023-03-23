@@ -1,5 +1,6 @@
 import React from "react";
 import TextInput from "./TextInput";
+import styles from "./InputForm.module.css";
 
 const InputForm = (props) => {
   const [enteredUsername, setEnteredUsername] = React.useState("");
@@ -15,7 +16,7 @@ const InputForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className={`${styles["input-form"]}`} onSubmit={submitHandler}>
       <TextInput
         label="Username"
         value={enteredUsername}
