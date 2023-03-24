@@ -8,6 +8,9 @@ const ErrorModal = (props) => {
       <section>
         <h2>Invalid input</h2>
         <p>{props.errorMessage}</p>
+        <button type="button" onClick={props.onCloseModal}>
+          Okay
+        </button>
       </section>
     </Card>
   );
