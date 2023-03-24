@@ -1,6 +1,7 @@
 import React from "react";
 import TextInput from "./TextInput";
 import styles from "./InputForm.module.css";
+import Card from "./UI/Card";
 
 const InputForm = (props) => {
   const [enteredUsername, setEnteredUsername] = React.useState("");
@@ -16,19 +17,21 @@ const InputForm = (props) => {
   };
 
   return (
-    <form className={`${styles["input-form"]}`} onSubmit={submitHandler}>
-      <TextInput
-        label="Username"
-        value={enteredUsername}
-        setValue={setEnteredUsername}
-      />
-      <TextInput
-        label="Age (Years)"
-        value={enteredAge}
-        setValue={setEnteredAge}
-      />
-      <button type="submit">Add User</button>
-    </form>
+    <Card className={`${styles["input-form"]}`}>
+      <form onSubmit={submitHandler}>
+        <TextInput
+          label="Username"
+          value={enteredUsername}
+          setValue={setEnteredUsername}
+        />
+        <TextInput
+          label="Age (Years)"
+          value={enteredAge}
+          setValue={setEnteredAge}
+        />
+        <button type="submit">Add User</button>
+      </form>
+    </Card>
   );
 };
 
