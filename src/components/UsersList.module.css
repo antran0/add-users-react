@@ -1,9 +1,14 @@
 .users-list {
-  list-style: none;
-  padding-left: 0;
-  border: 1px solid black;
   background-color: white;
   position: relative;
   left: 25%;
   width: 50%;
+}
+
+.users-list ul {
+  padding: 5px;
+}
+
+.users-list--empty {
+  padding: 0;
 }
