@@ -33,7 +33,12 @@ function App() {
   return (
     <div className="App">
       <InputForm onAddNewUser={handleAddNewUser} />
-      <ErrorModal errorMessage={errorMessage} />
+      {errorMessage.length !== 0 && (
+        <ErrorModal
+          errorMessage={errorMessage}
+          onCloseModal={() => setErrorMessage("")}
+        />
+      )}
       <UserList users={addedUsers} />
     </div>
   );
