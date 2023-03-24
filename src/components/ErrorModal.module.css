@@ -1,2 +1,6 @@
 .error-modal {
+  background-color: white;
+  position: relative;
+  left: 25%;
+  width: 50%;
 }
