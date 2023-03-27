@@ -17,22 +17,19 @@ function App() {
   const [errorMessage, setErrorMessage] = React.useState("");
 
   const handleAddNewUser = (name, age) => {
-    if (name.length === 0 || age.length === 0) {
-      setErrorMessage("Please enter a valid name and age (non-empty values).");
-    } else if (Number.isNaN(+age) || +age <= 0) {
-      setErrorMessage("Please enter a valid age (> 0).");
-    } else {
-      setUsers((prevUsers) => [
-        ...prevUsers,
-        { id: Math.random(), name: name, age: +age },
-      ]);
-      setErrorMessage("");
-    }
+    setUsers((prevUsers) => [
+      ...prevUsers,
+      { id: Math.random(), name: name, age: +age },
+    ]);
+    setErrorMessage("");
   };
 
   return (
     <div className="App">
-      <InputForm onAddNewUser={handleAddNewUser} />
+      <InputForm
+        setErrorMessage={setErrorMessage}
+        onAddNewUser={handleAddNewUser}
+      />
       {errorMessage.length !== 0 && (
         <ErrorModal
           errorMessage={errorMessage}
