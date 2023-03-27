@@ -9,8 +9,8 @@ const ErrorModal = (props) => {
       <Backdrop onClick={props.onCloseModal} />
       <Card className={`${styles["error-modal"]}`}>
         <section>
-          <h2>Invalid input</h2>
-          <p>{props.errorMessage}</p>
+          <h2>{props.title}</h2>
+          <p>{props.message}</p>
           <button type="button" onClick={props.onCloseModal}>
             Okay
           </button>
