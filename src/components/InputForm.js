@@ -3,6 +3,7 @@ import TextInput from "./TextInput";
 import styles from "./InputForm.module.css";
 import Card from "./UI/Card";
 import ErrorModal from "./ErrorModal";
+import Button from "./UI/Button";
 
 const InputForm = (props) => {
   const [enteredUsername, setEnteredUsername] = React.useState("");
@@ -54,7 +55,7 @@ const InputForm = (props) => {
             value={enteredAge}
             setValue={setEnteredAge}
           />
-          <button type="submit">Add User</button>
+          <Button type="submit">Add User</Button>
         </form>
       </Card>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ErrorModal.module.css";
 import Backdrop from "./UI/Backdrop";
+import Button from "./UI/Button";
 import Card from "./UI/Card";
 
 const ErrorModal = (props) => {
@@ -11,9 +12,9 @@ const ErrorModal = (props) => {
         <section>
           <h2>{props.title}</h2>
           <p>{props.message}</p>
-          <button type="button" onClick={props.onCloseModal}>
+          <Button type="button" onClick={props.onCloseModal}>
             Okay
-          </button>
+          </Button>
         </section>
       </Card>
     </div>
