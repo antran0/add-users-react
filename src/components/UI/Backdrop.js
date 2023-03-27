@@ -7,7 +7,7 @@ const Backdrop = (props) => {
       className={`${styles["backdrop"]} ${props.className}`}
       onClick={props.onClick}
     >
-      props.children
+      {props.children}
     </div>
   );
 };
