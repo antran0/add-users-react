@@ -10,10 +10,17 @@ const InputForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    props.onAddNewUser(enteredUsername, enteredAge);
-
-    setEnteredUsername("");
-    setEnteredAge("");
+    if (enteredUsername.length === 0 || enteredAge.length === 0) {
+      props.setErrorMessage(
+        "Please enter a valid name and age (non-empty values)."
+      );
+    } else if (Number.isNaN(+enteredAge) || +enteredAge <= 0) {
+      props.setErrorMessage("Please enter a valid age (> 0).");
+    } else {
+      props.onAddNewUser(enteredUsername, enteredAge);
+      setEnteredUsername("");
+      setEnteredAge("");
+    }
   };
 
   return (
