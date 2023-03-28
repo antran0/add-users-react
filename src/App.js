@@ -21,10 +21,14 @@ function App() {
     ]);
   };
 
+  const handleDeleteUser = (userId) => {
+    setUsers(addedUsers.filter((item) => item.id !== userId));
+  };
+
   return (
     <div className="App">
       <InputForm onAddNewUser={handleAddNewUser} />
-      <UserList users={addedUsers} />
+      <UserList users={addedUsers} onDeleteUser={handleDeleteUser} />
     </div>
   );
 }

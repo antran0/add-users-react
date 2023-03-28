@@ -4,6 +4,10 @@ import User from "./User";
 import styles from "./UsersList.module.css";
 
 const UserList = (props) => {
+  const handleListItemClick = (userId) => {
+    props.onDeleteUser(userId);
+  };
+
   return (
     <Card
       className={`${
@@ -14,7 +18,13 @@ const UserList = (props) => {
     >
       <ul>
         {props.users.map((user) => (
-          <User key={user.id} name={user.name} age={user.age} />
+          <User
+            key={user.id}
+            id={user.id}
+            name={user.name}
+            age={user.age}
+            onClick={handleListItemClick}
+          />
         ))}
       </ul>
     </Card>
