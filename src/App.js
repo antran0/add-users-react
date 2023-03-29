@@ -1,7 +1,5 @@
-import "./App.css";
 import InputForm from "./components/InputForm";
 import React from "react";
-import "./App.css";
 import UserList from "./components/UsersList";
 
 const INITIAL_USERS = [
