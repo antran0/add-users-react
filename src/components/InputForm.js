@@ -6,12 +6,15 @@ import ErrorModal from "./ErrorModal";
 import Button from "./UI/Button";
 
 const InputForm = (props) => {
-  const [enteredUsername, setEnteredUsername] = React.useState("");
-  const [enteredAge, setEnteredAge] = React.useState("");
+  const nameInputRef = React.useRef();
+  const ageInputRef = React.useRef();
+
   const [error, setError] = React.useState();
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const enteredUsername = nameInputRef.current.value;
+    const enteredAge = ageInputRef.current.value;
 
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
@@ -25,8 +28,8 @@ const InputForm = (props) => {
       });
     } else {
       props.onAddNewUser(enteredUsername, enteredAge);
-      setEnteredUsername("");
-      setEnteredAge("");
+      nameInputRef.current.value = "";
+      ageInputRef.current.value = "";
     }
   };
 
@@ -45,16 +48,8 @@ const InputForm = (props) => {
       )}
       <Card className={`${styles["input-form"]}`}>
         <form onSubmit={submitHandler}>
-          <TextInput
-            label="Username"
-            value={enteredUsername}
-            setValue={setEnteredUsername}
-          />
-          <TextInput
-            label="Age (Years)"
-            value={enteredAge}
-            setValue={setEnteredAge}
-          />
+          <TextInput label="Username" ref={nameInputRef} />
+          <TextInput label="Age (Years)" ref={ageInputRef} />
           <Button type="submit">Add User</Button>
         </form>
       </Card>
