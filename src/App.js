@@ -24,10 +24,10 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <React.Fragment>
       <InputForm onAddNewUser={handleAddNewUser} />
       <UserList users={addedUsers} onDeleteUser={handleDeleteUser} />
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -6,7 +6,7 @@ import Card from "./UI/Card";
 
 const ErrorModal = (props) => {
   return (
-    <div>
+    <React.Fragment>
       <Backdrop onClick={props.onCloseModal} />
       <Card className={`${styles["error-modal"]}`}>
         <section>
@@ -17,7 +17,7 @@ const ErrorModal = (props) => {
           </Button>
         </section>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 
