@@ -9,13 +9,7 @@ const UserList = (props) => {
   };
 
   return (
-    <Card
-      className={`${
-        props.users.length > 0
-          ? styles["users-list"]
-          : styles[".users-list--empty"]
-      }`}
-    >
+    <Card className={`${props.users.length > 0 ? styles["users-list"] : ""}`}>
       <ul>
         {props.users.map((user) => (
           <User

@@ -1,14 +1,13 @@
 .users-list {
   background-color: white;
-  position: relative;
-  left: 25%;
   width: 50%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  max-width: 25rem;
 }
 
 .users-list ul {
-  padding: 5px;
-}
-
-.users-list--empty {
-  padding: 0;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }

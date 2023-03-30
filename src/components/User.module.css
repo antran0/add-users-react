@@ -1,10 +1,10 @@
 .user {
-  display: flex;
-  flex-flow: row nowrap;
   border: 1px solid black;
-  margin: 5px;
+  margin: 0.5rem auto;
+  padding: 0.25rem;
+  display: flex;
 }
 
 .user > div {
-  margin: 5px;
+  margin-right: 0.5rem;
 }
